@@ -1,0 +1,181 @@
+-- Solosmash Hub - Fuluxs Ready
+local SolosmashHub = Instance.new("ScreenGui")
+SolosmashHub.Name = "SolosmashHub"
+SolosmashHub.ResetOnSpawn = false
+
+if syn then
+    SolosmashHub.Parent = game.CoreGui
+elseif gethui then
+    SolosmashHub.Parent = gethui()
+elseif iswindowactive and get_hidden_gui then
+    SolosmashHub.Parent = get_hidden_gui()
+else
+    SolosmashHub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+end
+
+local Frame = Instance.new("Frame")
+Frame.Parent = SolosmashHub
+Frame.Size = UDim2.new(0, 300, 0, 310)
+Frame.Position = UDim2.new(0.3, 0, 0.2, 0)
+Frame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+Frame.Active = true
+Frame.Draggable = true
+
+local Title = Instance.new("TextLabel", Frame)
+Title.Size = UDim2.new(1, 0, 0, 40)
+Title.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+Title.Text = "Solosmash Hub"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.Font = Enum.Font.SourceSansBold
+Title.TextSize = 24
+
+local function createBtn(y, txt, callback)
+    local b = Instance.new("TextButton", Frame)
+    b.Position = UDim2.new(0, 10, 0, y)
+    b.Size = UDim2.new(0, 280, 0, 40)
+    b.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+    b.Text = txt
+    b.TextColor3 = Color3.fromRGB(255, 255, 255)
+    b.Font = Enum.Font.SourceSans
+    b.TextSize = 18
+    b.MouseButton1Click:Connect(callback)
+end
+
+-- Auto Collect Rengoku
+createBtn(50, "Auto Collect Rengoku", function()
+    for _, v in pairs(workspace:GetDescendants()) do
+        if v:IsA("Tool") and v.Name == "Rengoku" then
+            local hrp = game.Players.LocalPlayer.Character.HumanoidRootPart
+            hrp.CFrame = v.Handle.CFrame
+            wait(0.5)
+            firetouchinterest(hrp, v.Handle, 0)
+            firetouchinterest(hrp, v.Handle, 1)
+        end
+    end
+end)
+
+-- Auto Collect Yama
+createBtn(100, "Auto Collect Yama Sword", function()
+    for _, v in pairs(workspace:GetDescendants()) do
+        if v:IsA("Tool") and v.Name == "Yama" then
+            local hrp = game.Players.LocalPlayer.Character.HumanoidRootPart
+            hrp.CFrame = v.Handle.CFrame
+            wait(0.5)
+            firetouchinterest(hrp, v.Handle, 0)
+            firetouchinterest(hrp, v.Handle, 1)
+        end
+    end
+end)
+
+-- Teleport to Rengoku (update coords if needed)
+createBtn(150, "Teleport to Rengoku", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5473, 313, -2212)
+end)
+
+-- Teleport to Yama (update coords if needed)
+createBtn(200, "Teleport to Yama", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3021, 140, -13197)
+end)
+
+-- OPTIONAL: Fake NPC Level Visual Change
+createBtn(250, "Fake NPC Level to 9999", function()
+    for _, npc in pairs(workspace.Enemies:GetChildren()) do
+        if npc:FindFirstChild("Head") then
+            for _, gui in pairs(npc.Head:GetChildren()) do
+                if gui:IsA("BillboardGui") and gui:FindFirstChildWhichIsA("TextLabel") then
+                    gui.TextLabel.Text = "Lv. 9999 BOSS"
+                end
+            end
+        end
+    end
+end)-- Solosmash Hub - Fuluxs Ready
+local SolosmashHub = Instance.new("ScreenGui")
+SolosmashHub.Name = "SolosmashHub"
+SolosmashHub.ResetOnSpawn = false
+
+if syn then
+    SolosmashHub.Parent = game.CoreGui
+elseif gethui then
+    SolosmashHub.Parent = gethui()
+elseif iswindowactive and get_hidden_gui then
+    SolosmashHub.Parent = get_hidden_gui()
+else
+    SolosmashHub.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+end
+
+local Frame = Instance.new("Frame")
+Frame.Parent = SolosmashHub
+Frame.Size = UDim2.new(0, 300, 0, 310)
+Frame.Position = UDim2.new(0.3, 0, 0.2, 0)
+Frame.BackgroundColor3 = Color3.fromRGB(25, 25, 25)
+Frame.Active = true
+Frame.Draggable = true
+
+local Title = Instance.new("TextLabel", Frame)
+Title.Size = UDim2.new(1, 0, 0, 40)
+Title.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+Title.Text = "Solosmash Hub"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.Font = Enum.Font.SourceSansBold
+Title.TextSize = 24
+
+local function createBtn(y, txt, callback)
+    local b = Instance.new("TextButton", Frame)
+    b.Position = UDim2.new(0, 10, 0, y)
+    b.Size = UDim2.new(0, 280, 0, 40)
+    b.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+    b.Text = txt
+    b.TextColor3 = Color3.fromRGB(255, 255, 255)
+    b.Font = Enum.Font.SourceSans
+    b.TextSize = 18
+    b.MouseButton1Click:Connect(callback)
+end
+
+-- Auto Collect Rengoku
+createBtn(50, "Auto Collect Rengoku", function()
+    for _, v in pairs(workspace:GetDescendants()) do
+        if v:IsA("Tool") and v.Name == "Rengoku" then
+            local hrp = game.Players.LocalPlayer.Character.HumanoidRootPart
+            hrp.CFrame = v.Handle.CFrame
+            wait(0.5)
+            firetouchinterest(hrp, v.Handle, 0)
+            firetouchinterest(hrp, v.Handle, 1)
+        end
+    end
+end)
+
+-- Auto Collect Yama
+createBtn(100, "Auto Collect Yama Sword", function()
+    for _, v in pairs(workspace:GetDescendants()) do
+        if v:IsA("Tool") and v.Name == "Yama" then
+            local hrp = game.Players.LocalPlayer.Character.HumanoidRootPart
+            hrp.CFrame = v.Handle.CFrame
+            wait(0.5)
+            firetouchinterest(hrp, v.Handle, 0)
+            firetouchinterest(hrp, v.Handle, 1)
+        end
+    end
+end)
+
+-- Teleport to Rengoku (update coords if needed)
+createBtn(150, "Teleport to Rengoku", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-5473, 313, -2212)
+end)
+
+-- Teleport to Yama (update coords if needed)
+createBtn(200, "Teleport to Yama", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-3021, 140, -13197)
+end)
+
+-- OPTIONAL: Fake NPC Level Visual Change
+createBtn(250, "Fake NPC Level to 9999", function()
+    for _, npc in pairs(workspace.Enemies:GetChildren()) do
+        if npc:FindFirstChild("Head") then
+            for _, gui in pairs(npc.Head:GetChildren()) do
+                if gui:IsA("BillboardGui") and gui:FindFirstChildWhichIsA("TextLabel") then
+                    gui.TextLabel.Text = "Lv. 9999 BOSS"
+                end
+            end
+        end
+    end
+end)
